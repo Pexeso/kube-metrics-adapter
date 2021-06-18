@@ -18,6 +18,8 @@ spec:
         version: {{ .Values.registry.imageTag }}
     spec:
       serviceAccountName: kube-metrics-adapter
+      imagePullSecrets:
+        - name: pexae
       containers:
         - name: kube-metrics-adapter
           image: {{ .Values.registry.image}}:{{ .Values.registry.imageTag }}
